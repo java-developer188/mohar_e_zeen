@@ -1,0 +1,142 @@
+.about {
+  position: relative;
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px var(--shadow);
+  filter: saturate(1.1);
+}
+
+.image-frame {
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--accent);
+  border-radius: 12px;
+  pointer-events: none;
+  transform: translate(15px, 15px);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.about-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  opacity: 0.85;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--accent-light);
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.feature-item h4 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    gap: 2rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .image-frame {
+    transform: translate(10px, 10px);
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+}

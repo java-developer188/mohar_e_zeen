@@ -1,0 +1,354 @@
+.collections {
+  position: relative;
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, var(--secondary), rgba(232, 220, 200, 0.5));
+}
+
+.collections-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header-badge {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Categories Grid */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.category-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.category-card-header {
+  background: linear-gradient(135deg, rgba(245, 230, 211, 0.5) 0%, rgba(255, 255, 255, 0.8) 100%);
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  border: 2px solid rgba(27, 77, 66, 0.1);
+  box-shadow: 0 8px 25px rgba(27, 77, 66, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.category-card-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+}
+
+.category-card-header:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(27, 77, 66, 0.12);
+  border-color: rgba(27, 77, 66, 0.2);
+}
+
+.category-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Besley', serif;
+  text-align: center;
+  margin: 0;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s ease;
+}
+
+.carousel-wrapper-inner {
+  flex: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.carousel-wrapper-inner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.carousel-wrapper-inner:hover .carousel-image {
+  transform: scale(1.05);
+}
+
+.image-zoom-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(27, 77, 66, 0.7);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.image-zoom-hint svg {
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-wrapper-inner:hover .image-zoom-hint {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.carousel-container:hover .carousel-image {
+  transform: scale(1.01);
+}
+
+.carousel-nav {
+  position: relative;
+  top: auto;
+  transform: none;
+  background: transparent;
+  color: var(--primary);
+  border: none;
+  font-size: 2.5rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-weight: 300;
+  line-height: 1;
+  min-width: 40px;
+  flex-shrink: 0;
+}
+
+.carousel-nav:hover {
+  color: var(--accent);
+  transform: scale(1.15);
+}
+
+.carousel-prev {
+  left: auto;
+  order: -1;
+}
+
+.carousel-next {
+  right: auto;
+  order: 3;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.8rem;
+  z-index: 10;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.indicator.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  width: 28px;
+  border-radius: 5px;
+}
+
+
+/* CTA Section */
+.collections-cta {
+  background: var(--primary);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.collections-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-custom {
+  background: var(--accent);
+  color: var(--text-dark);
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .collections {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .category-card-header {
+    padding: 1.2rem;
+  }
+
+  .category-title {
+    font-size: 1.2rem;
+  }
+
+  .carousel-container {
+    gap: 0.8rem;
+  }
+
+  .carousel-nav {
+    width: auto;
+    padding: 0.5rem;
+    font-size: 2rem;
+    min-width: 35px;
+  }
+
+  .image-zoom-hint {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .collections-cta {
+    padding: 2rem;
+  }
+}

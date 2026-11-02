@@ -1,0 +1,214 @@
+.floating-event-badge {
+  position: fixed;
+  top: 130px;
+  right: 2.5rem;
+  z-index: 100;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  transition: opacity 0.3s ease;
+}
+
+.floating-event-badge.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.particle-burst-container {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 0;
+}
+
+.burst-particle {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background: var(--color);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-top: calc(var(--size) / -2);
+  margin-left: calc(var(--size) / -2);
+  opacity: 0.95;
+  box-shadow: 0 0 15px var(--color), 0 0 30px var(--color);
+  animation: particleBurst var(--duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: var(--delay);
+  filter: drop-shadow(0 0 8px var(--color));
+  will-change: transform, opacity;
+}
+
+@keyframes particleBurst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  30% {
+    opacity: 0.95;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+      calc(cos(var(--angle)) * 140px),
+      calc(sin(var(--angle)) * 140px)
+    ) scale(0);
+  }
+}
+
+.event-circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #FFD700, #FFC700);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 8px 30px rgba(212, 175, 55, 0.5),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 8px rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  animation: bounce 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.02);
+  }
+}
+
+.floating-event-badge:hover .event-circle {
+  box-shadow:
+    0 15px 50px rgba(212, 175, 55, 0.7),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 8px rgba(255, 255, 255, 0.3);
+  transform: scale(1.12);
+}
+
+.circle-date {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #333;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.circle-month {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .floating-event-badge {
+    top: 120px;
+    right: 1.5rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  .event-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .circle-date {
+    font-size: 1.5rem;
+  }
+
+  .circle-month {
+    font-size: 0.6rem;
+  }
+
+  .burst-particle {
+    box-shadow: 0 0 10px var(--color);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-event-badge {
+    top: 115px;
+    right: 1rem;
+    width: 65px;
+    height: 65px;
+  }
+
+  .event-circle {
+    width: 65px;
+    height: 65px;
+  }
+
+  .circle-date {
+    font-size: 1.3rem;
+  }
+
+  .circle-month {
+    font-size: 0.55rem;
+  }
+
+  .burst-particle {
+    box-shadow: 0 0 8px var(--color);
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-10px) scale(1.02);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-event-badge {
+    top: 105px;
+    right: 0.8rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .event-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .circle-date {
+    font-size: 1.2rem;
+  }
+
+  .circle-month {
+    font-size: 0.5rem;
+  }
+
+  .burst-particle {
+    box-shadow: 0 0 6px var(--color);
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-8px) scale(1.02);
+    }
+  }
+}

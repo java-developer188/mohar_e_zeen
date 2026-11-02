@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600;700&family=Cinzel:wght@400;600;700&family=Besley:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1B4D42;
+  --primary-light: #2D6F63;
+  --primary-dark: #0D3C34;
+  --secondary: #F5E6D3;
+  --accent: #D4AF37;
+  --accent-light: #E8DCC8;
+  --text-dark: #2C1810;
+  --text-light: #F5E6D3;
+  --shadow: rgba(27, 77, 66, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cormorant Garamond', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--secondary);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', 'Besley', serif;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 5.5rem);
+  font-weight: 900;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+button {
+  font-family: 'Cormorant Garamond', inherit;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Block printing pattern background */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Better typography */
+.serif {
+  font-family: 'Playfair Display', 'Besley', serif;
+}
+
+.artistic {
+  font-family: 'Cinzel', serif;
+}
+
+.elegant {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--primary);
+  color: white;
+}

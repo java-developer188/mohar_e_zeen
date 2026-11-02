@@ -1,0 +1,371 @@
+.upcoming-events {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: 5rem 2rem;
+}
+
+.events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header-badge {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 50px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  font-family: 'Besley', serif;
+  margin-bottom: 1.5rem;
+}
+
+.title-underline {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 1.5rem auto;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.event-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 30px 100px rgba(212, 175, 55, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.event-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  height: 100%;
+  min-height: 400px;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.05);
+}
+
+.event-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(212, 175, 55, 0.9);
+  color: var(--text-dark);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.event-details {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-title {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Besley', serif;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.info-value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.info-value-secondary {
+  display: block;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.event-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.event-highlights {
+  margin-bottom: 2rem;
+}
+
+.highlights-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.highlights-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.highlight-icon {
+  color: var(--accent);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.btn-rsvp {
+  background: var(--accent);
+  color: var(--text-dark);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  align-self: flex-start;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.btn-rsvp:hover {
+  background: white;
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.5);
+}
+
+.btn-rsvp .arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-rsvp:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .upcoming-events {
+    padding: 4rem 1.5rem;
+  }
+
+  .event-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .event-image-wrapper {
+    min-height: 300px;
+  }
+
+  .event-title {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .upcoming-events {
+    padding: 3rem 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .events-container {
+    padding: 0;
+  }
+
+  .event-card {
+    gap: 1.5rem;
+  }
+
+  .event-details {
+    padding: 1.5rem;
+  }
+
+  .event-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .event-info {
+    padding: 1rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-value {
+    font-size: 1rem;
+  }
+
+  .event-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-rsvp {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .upcoming-events {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .event-image-wrapper {
+    min-height: 250px;
+  }
+
+  .event-details {
+    padding: 1rem;
+  }
+
+  .event-title {
+    font-size: 1.2rem;
+  }
+
+  .event-info {
+    padding: 0.8rem;
+  }
+
+  .info-icon {
+    font-size: 1.2rem;
+  }
+
+  .info-label {
+    font-size: 0.75rem;
+  }
+
+  .info-value {
+    font-size: 0.9rem;
+  }
+
+  .event-description {
+    font-size: 0.9rem;
+  }
+
+  .highlights-list li {
+    font-size: 0.9rem;
+  }
+}
