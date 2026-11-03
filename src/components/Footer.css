@@ -163,44 +163,25 @@
   letter-spacing: 1px;
 }
 
-.counter-display {
+.counter-badge-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 0.7rem;
-  margin: 0.6rem 0;
+  align-items: center;
+  margin: 0.8rem 0;
 }
 
-.counter-icon-left,
-.counter-icon-right {
-  font-size: 1.4rem;
-  animation: pulse 2s ease-in-out infinite;
+.visitor-badge {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  animation: fadeIn 0.6s ease-out;
 }
 
-.counter-icon-right {
-  animation-delay: 0.3s;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.1); }
-}
-
-.counter-number {
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: var(--accent);
-  font-family: 'Besley', serif;
-  text-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-  letter-spacing: -2px;
-  min-width: 100px;
-  animation: countUp 0.6s ease-out;
-}
-
-@keyframes countUp {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -292,16 +273,6 @@
     border: 1px solid var(--accent);
   }
 
-  .counter-number {
-    font-size: 1.8rem;
-    min-width: 70px;
-  }
-
-  .counter-icon-left,
-  .counter-icon-right {
-    font-size: 1.1rem;
-  }
-
   .counter-label {
     font-size: 0.75rem;
     margin-bottom: 0.4rem;
@@ -310,6 +281,11 @@
   .counter-tagline {
     font-size: 0.65rem;
     margin-top: 0.3rem;
+  }
+
+  .visitor-badge {
+    max-width: 90%;
+    height: auto;
   }
 
   .footer-credits {

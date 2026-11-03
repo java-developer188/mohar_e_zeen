@@ -1,31 +1,6 @@
-import { useState, useEffect } from 'react'
 import './Footer.css'
 
 function Footer() {
-  const [visitors, setVisitors] = useState(0)
-  const [displayCount, setDisplayCount] = useState(0)
-
-  useEffect(() => {
-    const storedCount = parseInt(localStorage.getItem('moharEZeenVisitors') || '0')
-    const newCount = storedCount + 1
-    localStorage.setItem('moharEZeenVisitors', newCount.toString())
-    setVisitors(newCount)
-
-    // Animate counter from 0 to actual count
-    let current = 0
-    const increment = Math.ceil(newCount / 30)
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= newCount) {
-        setDisplayCount(newCount)
-        clearInterval(timer)
-      } else {
-        setDisplayCount(current)
-      }
-    }, 30)
-
-    return () => clearInterval(timer)
-  }, [])
 
   return (
     <footer className="footer">
@@ -78,10 +53,12 @@ function Footer() {
           <div className="counter-divider"></div>
           <div className="visitor-counter">
             <p className="counter-label">✨ Visitors Who've Admired Our Craft</p>
-            <div className="counter-display">
-              <span className="counter-icon-left">🧵</span>
-              <span className="counter-number">{displayCount.toLocaleString()}</span>
-              <span className="counter-icon-right">👁️</span>
+            <div className="counter-badge-wrapper">
+              <img
+                src="https://visitor-badge.laobi.icu/badge?page_id=mohar-e-zeen.vercel.app&left_color=%231B4D42&right_color=%23D4AF37&left_text=Total%20Visitors"
+                alt="visitor count"
+                className="visitor-badge"
+              />
             </div>
             <p className="counter-tagline">Each visitor is a thread in our creative tapestry</p>
           </div>
