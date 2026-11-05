@@ -23,8 +23,12 @@ function Collections() {
         { id: 'purple2', src: '/images/table_runner/purple2.jpg' },
         { id: 'bp', src: '/images/table_runner/bp.jpg' },
         { id: 'g1', src: '/images/table_runner/g1.jpg' },
+        { id: 'gr2', src: '/images/table_runner/gr2.jpg' },
+        { id: 'green1', src: '/images/table_runner/green1.jpg' },
+        { id: 'green2', src: '/images/table_runner/green2.jpg' },
         { id: 'o1', src: '/images/table_runner/o1.jpg' },
-        { id: 'gr2', src: '/images/table_runner/gr2.jpg' }
+        { id: 'orange1', src: '/images/table_runner/orange1.jpg' },
+        { id: 'orangeset1', src: '/images/table_runner/orangeset1.jpg' }
       ]
     },
     {
@@ -37,7 +41,10 @@ function Collections() {
         { id: 'gc1', src: '/images/cushion/gc1.jpg' },
         { id: 'ro1', src: '/images/cushion/ro1.jpg' },
         { id: 'sb1', src: '/images/cushion/sb1.jpg' },
-        { id: 'c3', src: '/images/table_runner/g1.jpg' }
+        { id: 'c3', src: '/images/cushion/c3.jpg' },
+        { id: 'b2', src: '/images/cushion/b2.jpg' },
+        { id: 'bd1', src: '/images/cushion/bd1.jpg' },
+        { id: 'pd2', src: '/images/cushion/pd2.jpg' }
       ]
     },
     {
@@ -54,9 +61,8 @@ function Collections() {
       name: 'Table Covers',
       displayName: 'Table Covers',
       images: [
-        { id: 'p2', src: '/images/covers/p2.jpg' },
-        { id: 'b2', src: '/images/covers/b2.jpg' },
-        { id: 'pd2', src: '/images/covers/pd2.jpg' }
+        { id: 'tc1', src: '/images/covers/tc1.jpg' },
+        { id: 'tc2', src: '/images/covers/tc2.jpg' }
       ]
     },
     {
