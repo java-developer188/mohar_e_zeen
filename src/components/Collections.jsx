@@ -65,7 +65,13 @@ function Collections() {
       displayName: 'Clothing',
       images: [
         { id: 'rg1', src: '/images/clothing/rustgold1.jpg' },
-        { id: 'rg2', src: '/images/clothing/rustgold2.jpg' }
+        { id: 'rg2', src: '/images/clothing/rustgold2.jpg' },
+        { id: 'gr1', src: '/images/clothing/grey1.jpg' },
+        { id: 'gr2', src: '/images/clothing/grey2.jpg' },
+        { id: 'gr4', src: '/images/clothing/grey4.jpg' },
+        { id: 'gr5', src: '/images/clothing/grey5.jpg' },
+        { id: 'y1', src: '/images/clothing/yellow1.jpg' },
+        { id: 'y2', src: '/images/clothing/yellow2.jpg' }
       ]
     }
   ]
