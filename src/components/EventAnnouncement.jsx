@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import './EventAnnouncement.css'
+import { getSectionConfig, getText } from '../utils/siteConfigLoader'
 
 function EventAnnouncement() {
   const [confetti, setConfetti] = useState([])
+  const [eventData, setEventData] = useState(null)
 
   useEffect(() => {
     // Generate confetti pieces
@@ -14,17 +16,16 @@ function EventAnnouncement() {
       size: 6 + Math.random() * 8
     }))
     setConfetti(pieces)
-  }, [])
 
-  const upcomingEvent = {
-    title: 'Karachi Hunar Bazaar',
-    subtitle: 'Brand Spotlight',
-    date: '2026-11-08',
-    day: 'Friday',
-    time: '5:00 PM - 11:00 PM',
-    location: 'Habitt City, Tipu Sultan Road',
-    city: 'Karachi'
-  }
+    // Load event data from config
+    const loadEventData = async () => {
+      const config = await getSectionConfig('events')
+      if (config?.upcomingEventsList?.[0]) {
+        setEventData(config.upcomingEventsList[0])
+      }
+    }
+    loadEventData()
+  }, [])
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr)
@@ -40,6 +41,8 @@ function EventAnnouncement() {
       section.scrollIntoView({ behavior: 'smooth' })
     }
   }
+
+  if (!eventData) return null
 
   return (
     <div className="event-announcement">
@@ -61,25 +64,25 @@ function EventAnnouncement() {
       <div className="announcement-content">
         <div className="announcement-left">
           <div className="event-badge-small">✨ LIVE EVENT</div>
-          <h3 className="event-title-small">{upcomingEvent.title}</h3>
-          <p className="event-subtitle-small">{upcomingEvent.subtitle}</p>
+          <h3 className="event-title-small">{getText(eventData.title)}</h3>
+          <p className="event-subtitle-small"></p>
         </div>
 
         <div className="announcement-center">
           <div className="date-circle">
-            <span className="date-num">{formatDate(upcomingEvent.date).split(' ')[1]}</span>
-            <span className="date-month">{formatDate(upcomingEvent.date).split(' ')[0]}</span>
+            <span className="date-num">{formatDate(eventData.date).split(' ')[1]}</span>
+            <span className="date-month">{formatDate(eventData.date).split(' ')[0]}</span>
           </div>
         </div>
 
         <div className="announcement-right">
           <div className="event-detail">
             <span className="detail-icon">📍</span>
-            <span className="detail-text">{upcomingEvent.location}</span>
+            <span className="detail-text">{getText(eventData.location)}</span>
           </div>
           <div className="event-detail">
             <span className="detail-icon">⏰</span>
-            <span className="detail-text">{upcomingEvent.time}</span>
+            <span className="detail-text">{eventData.startTime} - {eventData.endTime}</span>
           </div>
         </div>
 

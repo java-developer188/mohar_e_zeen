@@ -1,9 +1,25 @@
 import { useEffect, useState } from 'react'
 import './FloatingEventBadge.css'
+import { getTranslatedSection } from '../utils/siteConfigLoader'
 
 function FloatingEventBadge() {
   const [confetti, setConfetti] = useState([])
   const [isVisible, setIsVisible] = useState(true)
+  const [eventDate, setEventDate] = useState({ day: '', month: '' })
+
+  useEffect(() => {
+    // Load event date from config
+    const loadEventDate = async () => {
+      const eventsConfig = await getTranslatedSection('events')
+      if (eventsConfig?.upcomingEventsList?.[0]?.date) {
+        const date = new Date(eventsConfig.upcomingEventsList[0].date)
+        const day = date.getDate()
+        const month = date.toLocaleString('en-US', { month: 'short' })
+        setEventDate({ day, month })
+      }
+    }
+    loadEventDate()
+  }, [])
 
   useEffect(() => {
     const colors = ['#FFD700', '#FF6B9D', '#00D4FF', '#7FFF00', '#FF8C00', '#00FF88']
@@ -20,10 +36,7 @@ function FloatingEventBadge() {
       setConfetti(pieces)
     }
 
-    // Generate initial particles
     generateParticles()
-
-    // Continuously regenerate particles every 2.5 seconds for continuous burst effect
     const interval = setInterval(generateParticles, 2500)
 
     const handleScroll = () => {
@@ -71,8 +84,8 @@ function FloatingEventBadge() {
       </div>
 
       <div className="event-circle">
-        <span className="circle-date">8</span>
-        <span className="circle-month">Nov</span>
+        <span className="circle-date">{eventDate.day}</span>
+        <span className="circle-month">{eventDate.month}</span>
       </div>
     </div>
   )

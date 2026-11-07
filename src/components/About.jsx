@@ -1,14 +1,28 @@
+import { useState, useEffect } from 'react'
 import './About.css'
+import { getSectionConfig, getText } from '../utils/siteConfigLoader'
 
 function About() {
+  const [aboutConfig, setAboutConfig] = useState(null)
+
+  useEffect(() => {
+    const loadConfig = async () => {
+      const config = await getSectionConfig('about')
+      setAboutConfig(config)
+    }
+    loadConfig()
+  }, [])
+
+  if (!aboutConfig) return null
+
   return (
     <section id="about" className="about">
       <div className="about-container">
         <div className="about-grid">
           <div className="about-image">
             <img
-              src="/images/cushion/gc1.jpg"
-              alt="Artisan at work"
+              src={aboutConfig.image}
+              alt={getText(aboutConfig.imageAlt)}
               className="about-img"
               onError={(e) => e.target.src = 'https://via.placeholder.com/500x600?text=Artisan+at+Work'}
             />
@@ -16,47 +30,24 @@ function About() {
           </div>
 
           <div className="about-content">
-            <h2 className="about-title">Our Story</h2>
-            <p className="about-text">
-              Mohar-e-Zeen was born from a passion for preserving the ancient art of block printing.
-              For over a decade, we've worked with master artisans to revive traditional motifs and
-              sustainable practices.
-            </p>
-            <p className="about-text">
-              Each of our pieces tells a story - from the intricate hand-carved wooden blocks passed
-              down through generations, to the natural indigo vats that produce those iconic deep blues
-              and greens.
-            </p>
+            <h2 className="about-title">{getText(aboutConfig.title)}</h2>
+
+            {aboutConfig.paragraphs && (Array.isArray(aboutConfig.paragraphs) ? aboutConfig.paragraphs : aboutConfig.paragraphs.en).map((paragraph, idx) => (
+              <p key={idx} className="about-text">
+                {paragraph}
+              </p>
+            ))}
 
             <div className="about-features">
-              <div className="feature-item">
-                <span className="feature-icon">🌿</span>
-                <div>
-                  <h4>100% Natural Dyes</h4>
-                  <p>Sourced from nature, gentle on skin and environment</p>
+              {aboutConfig.features && aboutConfig.features.map((feature, idx) => (
+                <div key={idx} className="feature-item">
+                  <span className="feature-icon">{feature.icon}</span>
+                  <div>
+                    <h4>{getText(feature.title)}</h4>
+                    <p>{getText(feature.description)}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">🪵</span>
-                <div>
-                  <h4>Hand-Carved Blocks</h4>
-                  <p>Traditional teak wood blocks crafted by master artisans</p>
-                </div>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">♻️</span>
-                <div>
-                  <h4>Eco-Friendly</h4>
-                  <p>Sustainable practices that respect our planet</p>
-                </div>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">✋</span>
-                <div>
-                  <h4>Ethically Made</h4>
-                  <p>Fair wages and safe working conditions guaranteed</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

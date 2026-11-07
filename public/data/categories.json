@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Bedsheets",
+      "displayName": "Royal Bedsheets",
+      "folderName": "bedsheets",
+      "description": "Luxurious hand-blocked bedsheets with traditional patterns",
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "name": "Table Runners",
+      "displayName": "Table Runners",
+      "folderName": "table_runner",
+      "description": "Elegant table runners featuring vibrant colors and intricate designs",
+      "enabled": true
+    },
+    {
+      "id": 3,
+      "name": "Cushion Covers",
+      "displayName": "Cushion Covers",
+      "folderName": "cushion",
+      "description": "Decorative cushion covers with artistic block prints",
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "name": "Wall Hangings",
+      "displayName": "Wall Hangings",
+      "folderName": "hangings",
+      "description": "Beautiful wall tapestries and fabric hangings for home decor",
+      "enabled": true
+    },
+    {
+      "id": 5,
+      "name": "Table Covers",
+      "displayName": "Table Covers",
+      "folderName": "covers",
+      "description": "Premium quality table covers with traditional hand-block printing",
+      "enabled": true
+    },
+    {
+      "id": 6,
+      "name": "Clothing",
+      "displayName": "Clothing",
+      "folderName": "clothing",
+      "description": "Handcrafted apparel featuring unique natural dye patterns",
+      "enabled": true
+    }
+  ]
+}

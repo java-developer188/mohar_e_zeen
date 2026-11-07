@@ -1,0 +1,391 @@
+{
+  "settings": {
+    "defaultLanguage": "en",
+    "supportedLanguages": ["en", "ur"],
+    "supportedLanguageNames": {
+      "en": "English",
+      "ur": "اردو"
+    }
+  },
+
+  "siteMetadata": {
+    "en": {
+      "title": "Mohar-e-Zeen | Handcrafted Textiles",
+      "description": "Traditional block printing meets modern elegance. Handcrafted textiles with natural dyes.",
+      "keywords": "block printing, handcrafted, textiles, natural dyes, Indian art"
+    },
+    "ur": {
+      "title": "موہر ای زین | دستکاری ٹیکسٹائل",
+      "description": "روایتی بلاک پرنٹنگ جدید شان و شوکت کے ساتھ ملی۔ قدرتی رنگوں سے بنی دستکاری ٹیکسٹائل۔",
+      "keywords": "بلاک پرنٹنگ، دستکاری، ٹیکسٹائل، قدرتی رنگ"
+    }
+  },
+
+  "navbar": {
+    "enabled": true,
+    "logoImage": "/images/green_logo.png",
+    "logoText": "MOHAR-E-ZEEN",
+    "links": [
+      { "label": { "en": "Home", "ur": "ہوم" }, "href": "#home", "enabled": true },
+      { "label": { "en": "Collections", "ur": "مجموعے" }, "href": "#collections", "enabled": true },
+      { "label": { "en": "Our Story", "ur": "ہماری کہانی" }, "href": "#about", "enabled": true },
+      { "label": { "en": "Our Craft", "ur": "ہماری کاری گری" }, "href": "#craft", "enabled": true },
+      { "label": { "en": "Contact", "ur": "رابطہ" }, "href": "#contact", "enabled": true }
+    ],
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/mohar_e_zeen",
+        "icon": "fab fa-instagram",
+        "title": { "en": "Follow on Instagram", "ur": "انسٹاگرام پر فالو کریں" }
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/profile.php?id=61588886203388",
+        "icon": "fab fa-facebook-f",
+        "title": { "en": "Follow on Facebook", "ur": "فیس بک پر فالو کریں" }
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/923460832020",
+        "icon": "fab fa-whatsapp",
+        "title": { "en": "Chat on WhatsApp", "ur": "واٹس ایپ پر چیٹ کریں" }
+      }
+    ],
+    "ctaButton": {
+      "text": { "en": "Inquire Now", "ur": "اب انکوائری کریں" },
+      "href": "#contact",
+      "enabled": true
+    }
+  },
+
+  "hero": {
+    "enabled": true,
+    "backgroundImage": "/images/table_runner/bp.jpg",
+    "pretitle": "MOHAR-E-ZEEN",
+    "title": {
+      "en": {
+        "line1": "Handcrafted",
+        "line2": "Textiles",
+        "line2Accent": true,
+        "line3": "That Tell Stories"
+      },
+      "ur": {
+        "line1": "دستکاری",
+        "line2": "ٹیکسٹائل",
+        "line2Accent": true,
+        "line3": "جو کہانیاں سناتے ہیں"
+      }
+    },
+    "subtitle": {
+      "en": "Traditional block printing meets modern elegance. Each piece is hand-stamped with love using natural dyes and ancestral wooden blocks.",
+      "ur": "روایتی بلاک پرنٹنگ جدید شان و شوکت کے ساتھ ملی۔ ہر چیز محبت سے ہاتھ سے قدرتی رنگوں اور پرانے لکڑی کے قالبوں سے بنائی جاتی ہے۔"
+    },
+    "carouselImages": [
+      { "src": "/images/cushion/sb1.jpg", "alt": { "en": "Cushion design", "ur": "کشن ڈیزائن" } },
+      { "src": "/images/cushion/p1.jpg", "alt": { "en": "Cushion display", "ur": "کشن ڈسپلے" } },
+      { "src": "/images/table_runner/g1.jpg", "alt": { "en": "Green table runner", "ur": "سبز ٹیبل رنر" } }
+    ],
+    "buttons": [
+      {
+        "text": { "en": "Explore Our Collections", "ur": "ہمارے مجموعے دیکھیں" },
+        "href": "#collections",
+        "type": "primary",
+        "showArrow": true
+      },
+      {
+        "text": { "en": "Watch Our Process", "ur": "ہماری عمل دیکھیں" },
+        "href": "#craft",
+        "type": "secondary",
+        "showArrow": false
+      }
+    ],
+    "stats": [
+      { "number": "100%", "label": { "en": "Natural Dyes", "ur": "قدرتی رنگ" } },
+      { "number": "✓", "label": { "en": "Artisan Made", "ur": "کاریگر سے بنی" } },
+      { "number": "∞", "label": { "en": "Love & Care", "ur": "محبت اور دیکھ بھال" } }
+    ]
+  },
+
+  "about": {
+    "enabled": true,
+    "title": { "en": "Our Story", "ur": "ہماری کہانی" },
+    "image": "/images/cushion/gc1.jpg",
+    "imageAlt": { "en": "Artisan at work", "ur": "کاریگر کام میں" },
+    "paragraphs": {
+      "en": [
+        "Mohar-e-Zeen was born from a passion for preserving the ancient art of block printing. We are proud to work with talented artisans who dedicate themselves to reviving traditional motifs and sustainable practices through their craft.",
+        "Each of our pieces tells a story - from the intricate hand-carved wooden blocks passed down through generations, to the natural indigo vats that produce those iconic deep blues and greens. Every textile is a labor of love and expertise."
+      ],
+      "ur": [
+        "موہر ای زین بلاک پرنٹنگ کی قدیم فن کو محفوظ رکھنے کے جذبے سے پیدا ہوا۔ ہم باصلاحیت کاریگروں کے ساتھ کام کرنے پر فخور ہیں جو اپنی کاری گری کے ذریعے روایتی نقوش اور ماحول دوست طریقوں کو برقرار رکھتے ہیں۔",
+        "ہمارے ہر ٹکڑے کی اپنی کہانی ہے - ہاتھ سے کتری ہوئی لکڑی کے قالبوں سے جو نسلوں سے چلے آ رہے ہیں، قدرتی نیل کے حوضوں تک جو گہری نیلی اور سبز رنگ پیدا کرتے ہیں۔ ہر ٹیکسٹائل محبت اور ماہرانہ کام کا نتیجہ ہے۔"
+      ]
+    },
+    "features": [
+      {
+        "icon": "🌿",
+        "title": { "en": "100% Natural Dyes", "ur": "100% قدرتی رنگ" },
+        "description": { "en": "Sourced from nature, gentle on skin and environment", "ur": "قدرت سے حاصل، جلد اور ماحول کے لیے نرم" }
+      },
+      {
+        "icon": "🪵",
+        "title": { "en": "Hand-Carved Blocks", "ur": "ہاتھ سے کتری ہوئی بلاکس" },
+        "description": { "en": "Traditional teak wood blocks crafted by master artisans", "ur": "روایتی ساگوان کی لکڑی کی بلاکس ماسٹر کاریگروں سے بنی" }
+      },
+      {
+        "icon": "♻️",
+        "title": { "en": "Eco-Friendly", "ur": "ماحول دوست" },
+        "description": { "en": "Sustainable practices that respect our planet", "ur": "ماحول دوست طریقے جو ہمارے سیارے کا احترام کرتے ہیں" }
+      },
+      {
+        "icon": "✋",
+        "title": { "en": "Ethically Made", "ur": "اخلاقی طریقے سے بنی" },
+        "description": { "en": "Fair wages and safe working conditions guaranteed", "ur": "منصفانہ اجرت اور محفوظ کام کی جگہ کی ضمانت" }
+      }
+    ]
+  },
+
+  "collections": {
+    "enabled": true,
+    "title": { "en": "Heritage Collections", "ur": "روایتی مجموعے" },
+    "subtitle": { "en": "Each piece is hand-blocked using traditional techniques and natural vegetable dyes. Discover our signature range of home decor and apparel.", "ur": "ہر چیز روایتی تکنیکوں اور قدرتی سبزیوں کے رنگوں سے ہاتھ سے بنائی جاتی ہے۔ ہمارے خصوصی گھر کی سجاوٹ اور لباس کی رینج دریافت کریں۔" },
+    "categories": [
+      {
+        "id": 1,
+        "name": "Bedsheets",
+        "displayName": { "en": "Royal Bedsheets", "ur": "شاہی چادریں" },
+        "folderName": "bedsheets",
+        "description": { "en": "Luxurious hand-blocked bedsheets with traditional patterns", "ur": "روایتی نقوش کے ساتھ شاندار دستکاری چادریں" },
+        "enabled": true
+      },
+      {
+        "id": 2,
+        "name": "Table Runners",
+        "displayName": { "en": "Table Runners", "ur": "میز کے رنرز" },
+        "folderName": "table_runner",
+        "description": { "en": "Elegant table runners featuring vibrant colors and intricate designs", "ur": "روشن رنگوں اور پیچیدہ ڈیزائنوں کے ساتھ خوبصورت میز کے رنرز" },
+        "enabled": true
+      },
+      {
+        "id": 3,
+        "name": "Cushion Covers",
+        "displayName": { "en": "Cushion Covers", "ur": "کشن کا کور" },
+        "folderName": "cushion",
+        "description": { "en": "Decorative cushion covers with artistic block prints", "ur": "فنکارانہ بلاک پرنٹس کے ساتھ سجاوٹی کشن کے کور" },
+        "enabled": true
+      },
+      {
+        "id": 4,
+        "name": "Wall Hangings",
+        "displayName": { "en": "Wall Hangings", "ur": "دیوار کی سجاوٹ" },
+        "folderName": "hangings",
+        "description": { "en": "Beautiful wall tapestries and fabric hangings for home decor", "ur": "گھر کی سجاوٹ کے لیے خوبصورت دیوار کی ٹیپسٹری اور کپڑے" },
+        "enabled": true
+      },
+      {
+        "id": 5,
+        "name": "Table Covers",
+        "displayName": { "en": "Table Covers", "ur": "میز کے کور" },
+        "folderName": "covers",
+        "description": { "en": "Premium quality table covers with traditional hand-block printing", "ur": "روایتی ہاتھ کی بلاک پرنٹنگ کے ساتھ اعلیٰ معیار کے میز کے کور" },
+        "enabled": true
+      },
+      {
+        "id": 6,
+        "name": "Clothing",
+        "displayName": { "en": "Clothing", "ur": "لباس" },
+        "folderName": "clothing",
+        "description": { "en": "Handcrafted apparel featuring unique natural dye patterns", "ur": "منفرد قدرتی رنگوں کے نقوش کے ساتھ دستکاری لباس" },
+        "enabled": true
+      }
+    ]
+  },
+
+  "craft": {
+    "enabled": true,
+    "headerImage": "/images/saverscreen.jpg",
+    "title": { "en": "Behind the Scenes", "ur": "پردے کے پیچھے" },
+    "subtitle": { "en": "Witness The Rhythmic Stamp", "ur": "تالی دار مہر کو دیکھیں" },
+    "description": { "en": "Follow us on social media to see the entire process of how we create these beautiful hand-crafted textiles using traditional techniques.", "ur": "ہمیں سوشل میڈیا پر فالو کریں تاکہ دیکھیں کہ ہم کس طرح روایتی تکنیکوں سے یہ خوبصورت دستکاری ٹیکسٹائلز بناتے ہیں۔" },
+    "socialDescription": { "en": "Follow us for more behind-the-scenes content and exclusive updates", "ur": "مزید پردے کے پیچھے کے مواد اور خصوصی اپ ڈیٹس کے لیے ہمیں فالو کریں" },
+    "videos": [
+      {
+        "id": 1,
+        "title": { "en": "Table Runner Collection", "ur": "ٹیبل رنر کالیکشن" },
+        "facebookId": "864596886710084",
+        "description": { "en": "Explore our latest table runner designs", "ur": "ہماری نئی ٹیبل رنر ڈیزائنیں دریافت کریں" },
+        "thumbnail": "/images/saverscreen.jpg"
+      },
+      {
+        "id": 3,
+        "title": { "en": "Indigo Dye Process", "ur": "نیلے رنگ کا عمل" },
+        "facebookId": "981851268316588",
+        "description": { "en": "Watch the magic of natural indigo dyeing", "ur": "قدرتی نیلے رنگ کی جادو دیکھیں" },
+        "thumbnail": "/images/tagscreen.jpg"
+      },
+      {
+        "id": 4,
+        "title": { "en": "Block Carving Artistry", "ur": "بلاک کاری گری" },
+        "facebookId": "1529320775912340",
+        "description": { "en": "Master artisans hand-carving wooden blocks", "ur": "ماسٹر کاریگروں نے لکڑی کے بلاک ہاتھ سے کاتے ہوئے" },
+        "thumbnail": "/images/cushion/gc1.jpg"
+      },
+      {
+        "id": 5,
+        "title": { "en": "Stamping in Action", "ur": "اسٹیمپنگ عمل میں" },
+        "facebookId": "1548433177065963",
+        "description": { "en": "The rhythmic dance of the block stamp", "ur": "بلاک اسٹیمپ کا تالی دار رقص" },
+        "thumbnail": "/images/bedsheets/b1.jpg"
+      }
+    ]
+  },
+
+  "events": {
+    "enabled": true,
+    "sectionTitle": { "en": "Celebrate With Us", "ur": "ہمارے ساتھ جشن منائیں" },
+    "sectionSubtitle": { "en": "Experience the artistry of block printing firsthand. Visit our exhibitions and meet the artisans who keep this ancient craft alive.", "ur": "بلاک پرنٹنگ کی کاری گری کو براہ راست محسوس کریں۔ ہماری نمائشوں میں جائیں اور انہیں ملیں جو اس قدیم فن کو زندہ رکھتے ہیں۔" },
+    "upcomingEventsList": [
+      {
+        "id": 1,
+        "title": { "en": "Karachi Hunar Bazaar - Brand Spotlight", "ur": "کراچی ہنر بازار - برانڈ اسپاٹ لائٹ" },
+        "date": "2026-11-08",
+        "startTime": "5:00 PM",
+        "endTime": "11:00 PM",
+        "location": { "en": "Habitt City, Tipu Sultan Road", "ur": "حبیت سٹی، ٹیپو سلطان روڈ" },
+        "city": { "en": "Karachi, Pakistan", "ur": "کراچی، پاکستان" },
+        "description": { "en": "Mohar-e-Zeen is thrilled to be featured at the Karachi Hunar Bazaar, presented by Karachi Women's Community by Uffaira. Come meet us at our stall and experience our hand block printed pieces up close. Bring your family and friends for an evening celebrating artisan craftsmanship and traditional textiles. Take home something made with heart and passion.", "ur": "موہر ای زین کو کراچی ہنر بازار میں نمائش کے لیے شامل کیا جا رہا ہے، کراچی خواتین کی برادری نے پیش کیا ہے۔ آئیں ہماری سٹال پر ملیں اور ہماری ہاتھ سے بنی پرنٹس کو قریب سے دیکھیں۔ اپنے خاندار اور دوستوں کو لے آئیں ایک شام کے لیے جو کاری گری اور روایتی ٹیکسٹائلز کا جشن ہے۔ اپنے ساتھ کچھ لے جائیں جو محبت اور جذبے سے بنی ہے۔" },
+        "highlights": [
+          { "en": "Hand block printed textiles on display", "ur": "ہاتھ سے بنی پرنٹس نمائش میں" },
+          { "en": "Meet the Mohar-e-Zeen team", "ur": "موہر ای زین ٹیم سے ملیں" },
+          { "en": "Exclusive bazaar collection", "ur": "خصوصی بازار کالیکشن" },
+          { "en": "Browse our artisan pieces", "ur": "ہماری کاری گری کی اشیاء دیکھیں" },
+          { "en": "Support local craftsmanship", "ur": "مقامی کاری گری کی حمایت کریں" }
+        ],
+        "image": "/images/hunarbazar.jpg"
+      }
+    ]
+  },
+
+  "contact": {
+    "enabled": true,
+    "title": { "en": "Let's Create Something Beautiful", "ur": "آئیے کچھ خوبصورت بنائیں" },
+    "description": { "en": "Have a custom project or wholesale inquiry? We'd love to hear from you.", "ur": "کیا آپ کے پاس کسٹم پروجیکٹ یا تھوک انکوائری ہے؟ ہمیں آپ سے سننا پسند ہے۔" },
+    "formFields": [
+      { "name": "name", "type": "text", "label": { "en": "Full Name", "ur": "مکمل نام" }, "placeholder": { "en": "Your Name", "ur": "آپ کا نام" }, "required": true },
+      { "name": "email", "type": "email", "label": { "en": "Email Address", "ur": "ای میل ایڈریس" }, "placeholder": { "en": "your@email.com", "ur": "آپ@ای میل.کم" }, "required": true },
+      { "name": "interest", "type": "select", "label": { "en": "What Are You Interested In?", "ur": "آپ کس میں دلچسپی رکھتے ہیں؟" }, "required": false, "options": [
+        { "value": "Home Decor & Textiles", "label": { "en": "Home Decor & Textiles", "ur": "گھر کی سجاوٹ اور ٹیکسٹائل" } },
+        { "value": "Clothing & Apparel", "label": { "en": "Clothing & Apparel", "ur": "لباس اور ملبوسات" } },
+        { "value": "Custom Commissions", "label": { "en": "Custom Commissions", "ur": "کسٹم کمیشن" } },
+        { "value": "Wholesale/B2B", "label": { "en": "Wholesale/B2B", "ur": "تھوک/B2B" } },
+        { "value": "Other", "label": { "en": "Other", "ur": "دیگر" } }
+      ] },
+      { "name": "message", "type": "textarea", "label": { "en": "Your Message", "ur": "آپ کا پیغام" }, "placeholder": { "en": "Tell us about your requirements...", "ur": "ہمیں اپنی ضروریات کے بارے میں بتائیں..." }, "required": true }
+    ],
+    "submitButton": { "en": "Send Message", "ur": "پیغام بھیجیں" },
+    "successMessage": { "en": "Thank you for your inquiry! We'll get back to you soon.", "ur": "آپ کی انکوائری کے لیے شکریہ! ہم جلد آپ کے پاس واپس آئیں گے۔" },
+    "contactDetails": [
+      {
+        "icon": "📧",
+        "type": "email",
+        "label": { "en": "Email", "ur": "ای میل" },
+        "items": [
+          "info@moharezeen.com"
+        ]
+      },
+      {
+        "icon": "📱",
+        "type": "phone",
+        "label": { "en": "Phone", "ur": "فون" },
+        "items": [
+          "+92 346 0832020",
+          "+92 342 2277977"
+        ]
+      },
+      {
+        "icon": "📍",
+        "type": "location",
+        "label": { "en": "Location", "ur": "مقام" },
+        "items": [
+          "Karachi, Pakistan"
+        ]
+      }
+    ],
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/mohar_e_zeen",
+        "icon": "fab fa-instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/profile.php?id=61588886203388",
+        "icon": "fab fa-facebook-f"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/923460832020",
+        "icon": "fab fa-whatsapp"
+      }
+    ]
+  },
+
+  "footer": {
+    "enabled": true,
+    "companyName": "Mohar-e-Zeen",
+    "logo": "🪡",
+    "tagline": { "en": "Reviving ancient traditions through hand-blocked textiles and ethical craftsmanship.", "ur": "ہاتھ سے بنی ٹیکسٹائلوں اور اخلاقی کاری گری کے ذریعے قدیم روایات کو زندہ کرنا۔" },
+    "aboutText": { "en": "Reviving ancient traditions through hand-blocked textiles and ethical craftsmanship.", "ur": "ہاتھ سے بنی ٹیکسٹائلوں اور اخلاقی کاری گری کے ذریعے قدیم روایات کو زندہ کرنا۔" },
+    "quickLinks": [
+      { "text": { "en": "Home", "ur": "ہوم" }, "href": "#home" },
+      { "text": { "en": "Collections", "ur": "مجموعے" }, "href": "#collections" },
+      { "text": { "en": "Our Story", "ur": "ہماری کہانی" }, "href": "#about" },
+      { "text": { "en": "Our Craft", "ur": "ہماری کاری گری" }, "href": "#craft" }
+    ],
+    "supportLinks": [
+      { "text": { "en": "Contact Us", "ur": "ہم سے رابطہ کریں" }, "href": "#contact" }
+    ],
+    "legalLinks": [
+      { "text": { "en": "Privacy Policy", "ur": "رازداری کی پالیسی" }, "href": "/privacy", "enabled": false },
+      { "text": { "en": "Terms of Service", "ur": "سروس کی شرائط" }, "href": "/terms", "enabled": false },
+      { "text": { "en": "Shipping Info", "ur": "شپنگ کی معلومات" }, "href": "/shipping", "enabled": false },
+      { "text": { "en": "Returns", "ur": "واپسی" }, "href": "/returns", "enabled": false },
+      { "text": { "en": "FAQ", "ur": "عام سوالات" }, "href": "/faq", "enabled": false }
+    ],
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/mohar_e_zeen",
+        "icon": "fab fa-instagram",
+        "label": { "en": "Instagram", "ur": "انسٹاگرام" }
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/profile.php?id=61588886203388",
+        "icon": "fab fa-facebook-f",
+        "label": { "en": "Facebook", "ur": "فیس بک" }
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/923460832020",
+        "icon": "fab fa-whatsapp",
+        "label": { "en": "WhatsApp", "ur": "واٹس ایپ" }
+      }
+    ],
+    "visitorCounter": {
+      "enabled": true,
+      "label": { "en": "✨ Visitors Who've Admired Our Craft", "ur": "✨ وہ وزیٹرز جنہوں نے ہماری کاری گری کی تعریف کی" },
+      "badgeUrl": "https://visitor-badge.laobi.icu/badge?page_id=mohar-e-zeen.vercel.app&left_color=%231B4D42&right_color=%23D4AF37&left_text=Total%20Visitors",
+      "tagline": { "en": "Each visitor is a thread in our creative tapestry", "ur": "ہر وزیٹر ہماری تخلیقی ٹیپسٹری میں ایک دھاگہ ہے" }
+    },
+    "copyright": { "en": "© 2026 Mohar-e-Zeen. All rights reserved. | Handcrafted with 💚", "ur": "© 2026 موہر ای زین۔ تمام حقوق محفوظ ہیں۔ | محبت سے بنایا گیا 💚" }
+  },
+
+  "floatingEventBadge": {
+    "enabled": true,
+    "showEvent": true,
+    "eventText": { "en": "Holiday Sale", "ur": "چھٹیوں کی بکری" },
+    "icon": "🎁"
+  }
+}

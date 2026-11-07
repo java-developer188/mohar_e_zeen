@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react'
 import './Navbar.css'
+import { getSectionConfig, getText } from '../utils/siteConfigLoader'
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [navbarConfig, setNavbarConfig] = useState(null)
+
+  useEffect(() => {
+    const loadConfig = async () => {
+      const config = await getSectionConfig('navbar')
+      setNavbarConfig(config)
+    }
+    loadConfig()
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,14 +22,6 @@ function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#collections', label: 'Collections' },
-    { href: '#about', label: 'Our Story' },
-    { href: '#craft', label: 'Our Craft' },
-    { href: '#contact', label: 'Contact' },
-  ]
 
   const scrollToSection = (e, href) => {
     e.preventDefault()
@@ -30,62 +32,56 @@ function Navbar() {
     setIsMobileMenuOpen(false)
   }
 
+  if (!navbarConfig) return null
+
+  const activeLinks = navbarConfig.links?.filter(link => link.enabled) || []
+
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
         <a href="#home" className="navbar-logo" onClick={(e) => scrollToSection(e, '#home')}>
           <img
-            src="/images/green_logo.png"
-            alt="Mohar-e-Zeen Logo"
+            src={navbarConfig.logoImage}
+            alt={navbarConfig.logoText}
             className="navbar-logo-image"
             onError={(e) => e.target.style.display = 'none'}
           />
         </a>
 
         <div className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          {navLinks.map((link) => (
+          {activeLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className="navbar-link"
               onClick={(e) => scrollToSection(e, link.href)}
             >
-              {link.label}
+              {getText(link.label)}
             </a>
           ))}
         </div>
 
         <div className="navbar-cta">
-          <a
-            href="https://www.instagram.com/mohar_e_zeen"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon-link instagram-link"
-            title="Follow on Instagram"
-          >
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=61588886203388"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon-link facebook-link"
-            title="Follow on Facebook"
-          >
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a
-            href="https://wa.me/923460832020"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon-link whatsapp-link"
-            title="Chat on WhatsApp"
-          >
-            <i className="fab fa-whatsapp"></i>
-          </a>
-          <button className="btn-inquire" onClick={() => document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })}>
-            Inquire Now
-          </button>
+          {navbarConfig.socialLinks && navbarConfig.socialLinks.map((link) => (
+            <a
+              key={link.platform}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`social-icon-link ${link.platform}-link`}
+              title={getText(link.title)}
+            >
+              <i className={link.icon}></i>
+            </a>
+          ))}
+          {navbarConfig.ctaButton?.enabled && (
+            <button
+              className="btn-inquire"
+              onClick={() => document.querySelector(navbarConfig.ctaButton.href)?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              {getText(navbarConfig.ctaButton.text)}
+            </button>
+          )}
         </div>
 
         <button

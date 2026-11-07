@@ -97,10 +97,25 @@
   transition: all 0.3s ease;
 }
 
+.social-icon {
+  color: white;
+}
+
 .social-icon:hover {
-  background: var(--accent);
   border-color: var(--accent);
   transform: translateY(-3px);
+}
+
+.contact-social a.social-icon.instagram-link:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.contact-social a.social-icon.facebook-link:hover {
+  background: #1877f2;
+}
+
+.contact-social a.social-icon.whatsapp-link:hover {
+  background: #25d366;
 }
 
 /* Contact Form */

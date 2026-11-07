@@ -1,43 +1,22 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './Craft.css'
 import VideoModal from './VideoModal'
+import { getSectionConfig, getText } from '../utils/siteConfigLoader'
 
 function Craft() {
+  const [craftConfig, setCraftConfig] = useState(null)
   const [selectedVideo, setSelectedVideo] = useState(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
   const gridRef = useRef(null)
 
-  const videos = [
-    {
-      id: 1,
-      title: 'Table Runner Collection',
-      facebookId: '864596886710084',
-      description: 'Explore our latest table runner designs',
-      thumbnail: '/images/saverscreen.jpg'
-    },
-    {
-      id: 3,
-      title: 'Indigo Dye Process',
-      facebookId: '981851268316588',
-      description: 'Watch the magic of natural indigo dyeing',
-      thumbnail: '/images/tagscreen.jpg'
-    },
-    {
-      id: 4,
-      title: 'Block Carving Artistry',
-      facebookId: '1529320775912340',
-      description: 'Master artisans hand-carving wooden blocks',
-      thumbnail: '/images/cushion/gc1.jpg'
-    },
-    {
-      id: 5,
-      title: 'Stamping in Action',
-      facebookId: '1548433177065963',
-      description: 'The rhythmic dance of the block stamp',
-      thumbnail: '/images/bedsheets/b1.jpg'
+  useEffect(() => {
+    const loadConfig = async () => {
+      const config = await getSectionConfig('craft')
+      setCraftConfig(config)
     }
-  ]
+    loadConfig()
+  }, [])
 
   const handleScrollLeft = () => {
     if (gridRef.current) {
@@ -61,28 +40,28 @@ function Craft() {
     }
   }
 
+  if (!craftConfig) return null
+
+  const videos = craftConfig.videos || []
+
   return (
     <section id="craft" className="craft">
-      {/* Header section with saverscreen image */}
       <div className="craft-header-visual">
         <img
-          src="/images/saverscreen.jpg"
+          src={craftConfig.headerImage}
           alt="Craft process header"
           className="craft-header-image"
           onError={(e) => e.target.src = 'https://via.placeholder.com/1920x400?text=Behind+the+Scenes'}
         />
         <div className="craft-header-overlay">
-          <h2 className="craft-title">Behind the Scenes</h2>
-          <p className="craft-subtitle">Witness The Rhythmic Stamp</p>
+          <h2 className="craft-title">{getText(craftConfig.title)}</h2>
+          <p className="craft-subtitle">{getText(craftConfig.subtitle)}</p>
         </div>
       </div>
 
       <div className="craft-container">
         <div className="craft-description">
-          <p>
-            Follow us on social media to see the entire process of how we create
-            these beautiful hand-crafted textiles using traditional techniques.
-          </p>
+          <p>{getText(craftConfig.description)}</p>
         </div>
 
         <div className="videos-carousel-wrapper">
@@ -105,7 +84,7 @@ function Craft() {
                 <div className="video-thumbnail">
                   <img
                     src={video.thumbnail}
-                    alt={video.title}
+                    alt={getText(video.title)}
                     className="thumbnail-img"
                     onError={(e) => e.target.src = 'https://via.placeholder.com/400x300?text=Video'}
                   />
@@ -117,8 +96,8 @@ function Craft() {
                   </div>
                 </div>
                 <div className="video-info">
-                  <h3 className="video-title">{video.title}</h3>
-                  <p className="video-description">{video.description}</p>
+                  <h3 className="video-title">{getText(video.title)}</h3>
+                  <p className="video-description">{getText(video.description)}</p>
                   <button className="btn-watch">Click to Watch</button>
                 </div>
               </div>
@@ -136,7 +115,7 @@ function Craft() {
         </div>
 
         <div className="craft-social">
-          <p>Follow us for more behind-the-scenes content and exclusive updates</p>
+          <p>{getText(craftConfig.socialDescription)}</p>
           <div className="social-links">
             <a
               href="https://www.instagram.com/mohar_e_zeen"

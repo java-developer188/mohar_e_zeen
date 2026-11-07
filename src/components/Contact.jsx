@@ -1,13 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Contact.css'
+import { getSectionConfig, getText } from '../utils/siteConfigLoader'
 
 function Contact() {
+  const [contactConfig, setContactConfig] = useState(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     interest: 'Home Decor & Textiles',
     message: ''
   })
+
+  useEffect(() => {
+    const loadConfig = async () => {
+      const config = await getSectionConfig('contact')
+      setContactConfig(config)
+      if (config?.formFields) {
+        const interestField = config.formFields.find(f => f.name === 'interest')
+        if (interestField?.options?.[0]) {
+          setFormData(prev => ({
+            ...prev,
+            interest: interestField.options[0].value
+          }))
+        }
+      }
+    }
+    loadConfig()
+  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -20,13 +39,77 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
+    const interestField = contactConfig?.formFields?.find(f => f.name === 'interest')
+    const defaultInterest = interestField?.options?.[0]?.value || 'Home Decor & Textiles'
     setFormData({
       name: '',
       email: '',
-      interest: 'Home Decor & Textiles',
+      interest: defaultInterest,
       message: ''
     })
-    alert('Thank you for your inquiry! We\'ll get back to you soon.')
+    alert(getText(contactConfig.successMessage))
+  }
+
+  if (!contactConfig) return null
+
+  const interestField = contactConfig.formFields?.find(f => f.name === 'interest')
+  const renderFormField = (field) => {
+    switch (field.type) {
+      case 'text':
+      case 'email':
+        return (
+          <div key={field.name} className="form-group">
+            <label htmlFor={field.name} className="form-label">{getText(field.label)}</label>
+            <input
+              type={field.type}
+              id={field.name}
+              name={field.name}
+              value={formData[field.name] || ''}
+              onChange={handleChange}
+              placeholder={getText(field.placeholder)}
+              className="form-input"
+              required={field.required}
+            />
+          </div>
+        )
+      case 'select':
+        return (
+          <div key={field.name} className="form-group">
+            <label htmlFor={field.name} className="form-label">{getText(field.label)}</label>
+            <select
+              id={field.name}
+              name={field.name}
+              value={formData[field.name] || ''}
+              onChange={handleChange}
+              className="form-select"
+            >
+              {field.options?.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {getText(option.label)}
+                </option>
+              ))}
+            </select>
+          </div>
+        )
+      case 'textarea':
+        return (
+          <div key={field.name} className="form-group">
+            <label htmlFor={field.name} className="form-label">{getText(field.label)}</label>
+            <textarea
+              id={field.name}
+              name={field.name}
+              value={formData[field.name] || ''}
+              onChange={handleChange}
+              placeholder={getText(field.placeholder)}
+              className="form-textarea"
+              rows="5"
+              required={field.required}
+            ></textarea>
+          </div>
+        )
+      default:
+        return null
+    }
   }
 
   return (
@@ -34,111 +117,44 @@ function Contact() {
       <div className="contact-container">
         <div className="contact-grid">
           <div className="contact-info">
-            <h2 className="contact-title">Let's Create Something <span className="italic">Beautiful</span></h2>
+            <h2 className="contact-title">{getText(contactConfig.title)}</h2>
             <p className="contact-description">
-              Have a custom project or wholesale inquiry? We'd love to hear from you.
+              {getText(contactConfig.description)}
             </p>
 
             <div className="contact-details">
-              <div className="detail-item">
-                <span className="detail-icon"><i className="fas fa-envelope"></i></span>
-                <div>
-                  <h4>Email</h4>
-                  <p>info@moharezeen.com</p>
+              {contactConfig.contactDetails && contactConfig.contactDetails.map((detail, idx) => (
+                <div key={idx} className="detail-item">
+                  <span className="detail-icon">{detail.icon.includes('fa-') ? <i className={detail.icon}></i> : detail.icon}</span>
+                  <div>
+                    <h4>{getText(detail.label)}</h4>
+                    {detail.items && detail.items.map((item, vidx) => <p key={vidx}>{item}</p>)}
+                  </div>
                 </div>
-              </div>
-              <div className="detail-item">
-                <span className="detail-icon"><i className="fas fa-phone"></i></span>
-                <div>
-                  <h4>Phone</h4>
-                  <p>+92 346 0832020</p>
-                  <p>+92 342 2277977</p>
-                </div>
-              </div>
-              <div className="detail-item">
-                <span className="detail-icon"><i className="fas fa-map-marker-alt"></i></span>
-                <div>
-                  <h4>Location</h4>
-                  <p>Karachi, Pakistan</p>
-                </div>
-              </div>
+              ))}
             </div>
 
             <div className="contact-social">
-              <a href="https://www.instagram.com/mohar_e_zeen" target="_blank" rel="noopener noreferrer" className="social-icon" title="Instagram">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.facebook.com/profile.php?id=61588886203388" target="_blank" rel="noopener noreferrer" className="social-icon" title="Facebook">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://wa.me/923460832020" target="_blank" rel="noopener noreferrer" className="social-icon" title="WhatsApp">
-                <i className="fab fa-whatsapp"></i>
-              </a>
+              {contactConfig.socialLinks && contactConfig.socialLinks.map((link) => (
+                <a
+                  key={link.platform}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`social-icon ${link.platform}-link`}
+                  title={link.platform}
+                >
+                  <i className={link.icon}></i>
+                </a>
+              ))}
             </div>
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your Name"
-                className="form-input"
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email" className="form-label">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="your@email.com"
-                className="form-input"
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="interest" className="form-label">What Are You Interested In?</label>
-              <select
-                id="interest"
-                name="interest"
-                value={formData.interest}
-                onChange={handleChange}
-                className="form-select"
-              >
-                <option>Home Decor & Textiles</option>
-                <option>Clothing & Apparel</option>
-                <option>Custom Commissions</option>
-                <option>Wholesale/B2B</option>
-                <option>Other</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message" className="form-label">Your Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell us about your requirements..."
-                className="form-textarea"
-                rows="5"
-                required
-              ></textarea>
-            </div>
+            {contactConfig.formFields && contactConfig.formFields.map(renderFormField)}
 
             <button type="submit" className="btn-submit">
-              Send Message
+              {getText(contactConfig.submitButton)}
               <span><i className="fas fa-paper-plane"></i></span>
             </button>
           </form>
