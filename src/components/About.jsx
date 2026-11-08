@@ -19,8 +19,7 @@ function About() {
             <h2 className="about-title">Our Story</h2>
             <p className="about-text">
               Mohar-e-Zeen was born from a passion for preserving the ancient art of block printing.
-              For over a decade, we've worked with master artisans to revive traditional motifs and
-              sustainable practices.
+              We are proud to work with talented artisans who dedicate themselves to reviving traditional motifs and sustainable practices through their craft.
             </p>
             <p className="about-text">
               Each of our pieces tells a story - from the intricate hand-carved wooden blocks passed

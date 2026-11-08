@@ -10,7 +10,16 @@ function Collections() {
       displayName: 'Royal Bedsheets',
       images: [
         { id: 'b1', src: '/images/bedsheets/b1.jpg' },
-        { id: 'bd2', src: '/images/bedsheets/bd2.jpg' }
+        { id: 'bd2', src: '/images/bedsheets/bd2.jpg' },
+        { id: 'bluebedsheet', src: '/images/bedsheets/bluebedsheet.jpeg' },
+        { id: 'bluebedsheet8', src: '/images/bedsheets/bluebedsheet8.jpg.jpeg' },
+        { id: 'pinkbedsheet', src: '/images/bedsheets/pinkbedsheet.jpeg' },
+        { id: 'pinkformat', src: '/images/bedsheets/pinkformat.jpg' },
+        { id: 'red2', src: '/images/bedsheets/red2.jpg.jpeg' },
+        { id: 'red3', src: '/images/bedsheets/red3.jpg.jpeg' },
+        { id: 'red4', src: '/images/bedsheets/red4.jpg.jpeg' },
+        { id: 'red5', src: '/images/bedsheets/red5.jpg.jpeg' },
+        { id: 'redformat1', src: '/images/bedsheets/redformat1.jpg' }
       ]
     },
     {
@@ -23,7 +32,7 @@ function Collections() {
         { id: 'purple2', src: '/images/table_runner/purple2.jpg' },
         { id: 'bp', src: '/images/table_runner/bp.jpg' },
         { id: 'g1', src: '/images/table_runner/g1.jpg' },
-        { id: 'gr2', src: '/images/table_runner/gr2.jpg' },
+        { id: 'grx2', src: '/images/table_runner/grx2.jpg' },
         { id: 'green1', src: '/images/table_runner/green1.jpg' },
         { id: 'green2', src: '/images/table_runner/green2.jpg' },
         { id: 'o1', src: '/images/table_runner/o1.jpg' },
@@ -43,8 +52,8 @@ function Collections() {
         { id: 'sb1', src: '/images/cushion/sb1.jpg' },
         { id: 'c3', src: '/images/cushion/c3.jpg' },
         { id: 'b2', src: '/images/cushion/b2.jpg' },
-        { id: 'bd1', src: '/images/cushion/bd1.jpg' },
-        { id: 'pd2', src: '/images/cushion/pd2.jpg' }
+        { id: 'pd2', src: '/images/cushion/pd2.jpg' },
+        { id: 'pinkcushion', src: '/images/cushion/pinkcushion.jpeg' }
       ]
     },
     {
@@ -53,7 +62,7 @@ function Collections() {
       displayName: 'Wall Hangings',
       images: [
         { id: 'hg1', src: '/images/hangings/hg1.jpg' },
-        { id: 'bd1', src: '/images/hangings/bd1.jpg' }
+        { id: 'cu1', src: '/images/hangings/cu1.jpg' }
       ]
     },
     {
